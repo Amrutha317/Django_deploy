@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>First App</title>
+  </head>
+  <body>
+    <h1>Hi! Welcome to my First Project</h1>
+    <h2>This page is visited {{ message }}.
+      <img src="{% static 'logo.jpg' %}" alt="Amrita Logo">
+      <link rel="stylesheet" type='text/css' href="{% static 'style.css' %}">
+    <p>Click <a href="help">here</a> for help.</p>
+
+    <ol>
+      {% for f in fruits %}
+      <li> {{ f }} </li>
+      {% endfor %}
+      </ol>
+
+    <h3>Programs offered</h3>
+ <table border="1">
+   {% for r in program_values %}
+     <tr>
+       <td>{{ r.title }}</td>
+       <td>{{ r.branch }}</td>
+     </tr>
+   {% endfor %}
+ </table>
+<h3>Students' list</h3>
+ <table border="1">
+   {% for s in student_values %}
+     <tr>
+       <td>{{ s.name }}</td>
+       <td>{{ s.roll_number }}</td>
+       <td>{{ s.year }}</td>
+       <td>{{ s.dob }}</td>
+     </tr>
+   {% endfor %}
+ </table>
+
+  </body>
+</html>
